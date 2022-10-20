@@ -1,0 +1,42 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.resources {
+	&_item {
+		display: flex;
+		align-items: center;
+		padding: .75rem 0;
+		border-top: @b-width solid @c-border;
+		border-bottom: @b-width solid @c-border;
+		.transition-all;
+
+		& + & {
+			margin-top: -@b-width;
+		}
+
+		&:visited .resources {
+			&_icon {
+				color: @c-muted;
+			}
+
+			&_name {
+				color: @c-gray;
+			}			
+		}
+
+		&:hover {
+			background: @c-background-muted;
+		}
+	}
+
+	&_icon {
+		.square(1.5rem);
+		margin-right: .75rem;
+	}
+
+	&_name {
+		font-weight: 300;
+		line-height: 150%;
+	}
+}

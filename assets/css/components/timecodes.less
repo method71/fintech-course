@@ -1,0 +1,41 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.timecodes {
+	height: 14rem;
+	max-height: 80vh;
+	overflow-y: auto;
+
+	border: @b-width solid @c-border;
+	.rounded(@b-radius);
+
+	&_item {
+		display: flex;
+		align-items: center;
+		padding: .75rem 1.5rem;
+		cursor: pointer;
+		.transition-all;
+
+		&-active {
+			background: @c-background-muted;
+		}
+	}
+
+	&_item:hover &_timestamp {
+		color: @c-accent;
+	}
+
+	&_timestamp {
+		margin-right: 1rem;
+		color: @c-primary;
+		.transition-all;
+	}
+
+	&_caption {
+		font-weight: 300;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+}

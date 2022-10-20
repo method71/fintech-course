@@ -1,0 +1,136 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.course {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	@media @v-m {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+
+	&_alert {
+		margin-bottom: 2.5rem;
+	}
+
+	&_block {
+		& + & {
+			margin-top: 5rem;
+
+			@media @v-m {
+				margin-top: 3.5rem;
+			}
+		}
+	}
+
+	&_header {
+		background: @c-background-muted;
+		.rounded(@b-radius);
+		padding: 2.5rem 3rem;
+		margin-bottom: 2.5rem;
+
+		@media @v-m {
+			padding: 1.5rem 2rem;
+		}
+	}
+
+	&_details {
+		display: flex;
+		margin-bottom: 1rem;
+		margin-left: -.75rem;
+		margin-top: -.75rem;
+
+		&_item {
+			display: inline-block;
+			background: @c-background;
+			margin-left: .75rem;
+			margin-top: .75rem;
+			padding: .25rem .75rem;
+			.rounded(@b-radius);
+			color: @c-gray;
+
+			&-primary {
+				background: @g-primary;
+				color: #fff;
+			}
+		}
+	}
+
+	&_title {
+		.title;
+		.cols(7);
+	}
+
+	&_description {
+		font-size: 1.125rem;
+		line-height: 150%;
+		font-weight: 300;
+		margin-top: 1rem;
+		.cols(7);
+	}
+
+	&_section {
+		& + & {
+			margin-top: 3.5rem;
+
+			@media @v-m {
+				margin-top: 2rem;
+			}
+		}
+	}
+
+	&_subtitle {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2rem;
+
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 150%;
+		color: @c-primary;
+
+		.icon {
+			flex-shrink: 0;
+			margin-right: 1rem;
+		}
+
+		@media @v-m {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	&_lessons {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -@l-col-gap;
+		margin-top: -2rem;
+
+		@media @v-m {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			margin-left: 0;
+			margin-top: 0;
+		}
+
+		&_loader {
+			width: 100%;
+		}
+
+		.preview, &_loader {
+			margin-left: @l-col-gap;
+			margin-top: 2rem;
+
+			@media @v-m {
+				margin-top: 0;
+				margin-left: 0;
+
+				& + .preview {
+					margin-left: @l-col-gap;
+				}
+			}
+		}
+	}
+}

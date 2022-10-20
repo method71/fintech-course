@@ -1,0 +1,19 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.about {
+	&_title {
+		margin-bottom: 1.5rem;
+
+		&:not(:first-child) {
+			margin-top: 3rem;
+		}
+	}
+
+	&_text {
+		& + & {
+			margin-top: 1.5rem;
+		}
+	}
+}

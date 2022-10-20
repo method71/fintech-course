@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="app">
+		<div include="assets/img/sprite.svg"></div>
+		
+		<header class="header header-instant">
+			<div class="wrap header_wrap">
+				<a href="./" class="header_logos">
+					<span class="header_logos_item header_logos_item-visa">
+						<img src="assets/img/logo/visa.svg" alt="visa logo">
+					</span>
+					<span class="header_logos_item header_logos_item-fintech">
+						<img src="assets/img/logo/fintech.svg" alt="fintech logo">
+					</span>
+				</a>
+		
+				<nav class="header_menu">
+					<a href="./#about" class="header_menu_item">О программе</a>
+					<a href="./#program" class="header_menu_item">Список уроков</a>
+					<a href="./#footer" class="header_menu_item">Контакты</a>
+					<a href="./signin.html" class="header_menu_item button button-inverse">Авторизация</a>
+				</nav>
+			</div>
+		</header>
+		
+		<main class="content auth">
+			<div class="auth_window">
+				<div class="auth_section">
+					<div class="auth_title">Авторизация</div>
+					<div class="auth_subtitle auth_subtitle-muted">Если у вас есть аккаунт на atameken.co — используйте его данные для авторизации.</div>
+					<div class="auth_subtitle">Нет аккаунта? <a href="./signup.html">Зарегистрируйтесь</a></div>
+				</div>
+
+				<form class="auth_section form" action="./account.html">
+					<label class="form_field">
+						<span class="form_label">Телефон</span>
+						<input type="email" class="input" placeholder="8 (7__) ___ __ __">
+					</label>
+
+					<label class="form_field">
+						<span class="form_label">Пароль</span>
+						<input type="password" class="input" placeholder="••••••••">
+					</label>
+
+					<button class="form_button button">Войти на сайт</button>
+
+					<div class="form_links">
+						<a href="./restore-password.html">Восстановить пароль</a>
+					</div>
+				</form>
+			</div>
+		</main>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+	<script src="assets/js/dist.js"></script>
+</body>
+</html>

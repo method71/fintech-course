@@ -1,0 +1,59 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.services {
+	background: @g-primary;
+	color: @c-text-inverse;
+	padding: 3rem 0;
+
+	&_wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		@media @v-t {
+			flex-direction: column;
+		}
+	}
+
+	&_image {
+		.cols(4);
+		flex-shrink: 0;
+
+		@media @v-t {
+			.cols(3);
+			margin-bottom: 2rem;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			pointer-events: none;
+		}
+	}
+
+	&_text {
+		.cols(7);
+		font-size: 1.5rem;
+		line-height: 150%;
+		font-weight: 300;
+		
+		p {
+			.animatedWords;
+		}
+
+		@media @v-t {
+			// text-align: center;
+		}
+
+		@media @v-m {
+			font-size: 1rem;
+		}
+	}
+
+	&_button {
+		margin-top: 1.5rem;
+	}
+}

@@ -1,0 +1,128 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.lesson {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 5rem;
+
+	@media @v-t {
+		flex-direction: column;
+	}
+
+	@media @v-m {
+		margin-bottom: 3rem;
+	}
+
+	&_title {
+		margin-bottom: 2rem;
+	}
+
+	&_subtitle {
+		line-height: 150%;
+		margin-bottom: 1.5rem;
+	}
+
+	&_main {
+		.cols(7);
+
+		@media @v-t {
+			width: 100%;
+		}
+	}
+
+	&_section {
+		& + & {
+			margin-top: 3rem;
+		}
+	}
+
+	&_block {
+		& + & {
+			margin-top: 1.5rem;
+		}
+	}
+
+	&_description {
+		background: @c-background-muted;
+		padding: 1.5rem 2rem;
+		.rounded(@b-radius);
+
+		font-size: 1.125rem;
+		font-weight: 300;
+		line-height: 150%;
+
+		p + p {
+			margin-top: 1.5rem;
+		}
+	}
+
+	&_sidebar {
+		.cols(4);
+
+		@media @v-t {
+			width: 100%;
+			margin-top: 3rem;
+		}
+	}
+
+	&_next {
+		display: flex;
+		padding: 2rem 0;
+		align-items: center;
+		justify-content: center;
+		background: @g-primary;
+		
+		font-size: 1.125rem;
+		color: @c-text-inverse;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		.transition-all;
+
+		.icon {
+			.square(1.5rem);
+			margin-left: .75rem;
+			flex-shrink: 0;
+		}
+
+		&:hover {
+			color: @c-accent;
+		}
+	}
+
+	&_overlay {
+		.square(100%);
+		position: absolute;
+		left: 0;
+		right: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 6rem;
+		background: url(../img/pattern.svg) no-repeat center center / cover, @g-primary;
+
+		font-size: 1.125rem;
+		line-height: 150%;
+		font-weight: 600;
+		color: @c-text-inverse;
+		text-align: center;
+
+		@media @v-t {
+			padding: 2rem 4rem;
+		}
+
+		@media @v-m {
+			padding: 2rem;
+		}
+
+		.button {
+			margin-top: 1.5rem;
+		}
+	}
+}

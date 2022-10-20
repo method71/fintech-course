@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="assets/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id="app">
+		<div include="assets/img/sprite.svg"></div>
+		
+		<header class="header header-instant">
+			<div class="wrap header_wrap">
+				<a href="./" class="header_logos">
+					<span class="header_logos_item header_logos_item-visa">
+						<img src="assets/img/logo/visa.svg" alt="visa logo">
+					</span>
+					<span class="header_logos_item header_logos_item-fintech">
+						<img src="assets/img/logo/fintech.svg" alt="fintech logo">
+					</span>
+				</a>
+		
+				<nav class="header_menu">
+					<a href="./#about" class="header_menu_item">О программе</a>
+					<a href="./#program" class="header_menu_item">Список уроков</a>
+					<a href="./#footer" class="header_menu_item">Контакты</a>
+					<a href="./signin.html" class="header_menu_item button button-inverse">Авторизация</a>
+				</nav>
+			</div>
+		</header>
+		
+		<main class="content auth">
+			<div class="auth_window">
+				<div class="auth_section">
+					<div class="auth_title">Регистрация</div>
+					<div class="auth_subtitle">Уже есть аккаунт?  <a href="./signin.html">Войти</a></div>
+				</div>
+
+				<form class="auth_section form" action="./signup-confirm.html">
+					<div class="form_field form_error">
+						Сообщение о неудаче
+					</div>
+
+					<label class="form_field">
+						<span class="form_label">Имя</span>
+						<input type="text" class="input" placeholder="Введите имя">
+					</label>
+
+					<label class="form_field">
+						<span class="form_label">Фамилия</span>
+						<input type="text" class="input" placeholder="Введите фамилию">
+					</label>
+
+					<label class="form_field">
+						<span class="form_label">Эл. почта</span>
+						<input type="email" class="input" placeholder="Укажите адрес электронной почты">
+					</label>
+
+					<label class="form_field">
+						<span class="form_label">Телефон</span>
+						<input type="text" class="input" placeholder="Укажите мобильный телефон">
+					</label>
+
+					<label class="form_field form_field-incorrect">
+						<span class="form_label">Пароль</span>
+						<input type="password" class="input" placeholder="Придумайте пароль">
+						<span class="form_field_error">Сообщение с ошибкой и инструкцией по заполнению</span>
+					</label>
+
+					<label class="form_field checkbox">
+						<input type="checkbox" checked="">
+						<span class="checkbox_icon">
+							<svg class="icon">
+								<use xlink:href="#checkmark"></use>
+							</svg>
+						</span>
+						<span class="checkbox_label">Получать полезные письма от Visa</span>
+					</label>
+
+					<button class="form_button button">Зарегистрироваться</button>
+
+					<div class="form_disclaimer">Нажимая на кнопку «Зарегистрироваться», вы даете согласие на обработку персональных данных и принимаете <a href="#" target="_blank">Условия использования</a></div>
+				</form>
+			</div>
+		</main>
+	</div>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+	<script src="assets/js/dist.js"></script>
+</body>
+</html>

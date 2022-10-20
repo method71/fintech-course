@@ -1,0 +1,50 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.personas {
+	display: flex;
+	align-items: center;
+	overflow-x: auto;
+
+	&_item {
+		display: flex;
+		align-items: center;
+
+		& + & {
+			margin-left: 2rem;
+		}
+
+	}
+
+	&_photo {
+		.square(4rem);
+		.rounded(100%);
+		overflow: hidden;
+		margin-right: 1rem;
+
+		img {
+			display: block;
+			.square(100%);
+			object-fit: cover;
+		}
+	}
+
+	&_name {
+		line-height: 150%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	&_text {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		
+		line-height: 150%;
+		font-size: .875rem;
+		font-weight: 300;
+		margin-top: .25rem;
+	}
+}

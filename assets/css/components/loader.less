@@ -1,0 +1,57 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.loader {
+	display: inline-flex;
+	width: 3.25rem;
+
+	&:before, &:after {
+		content: '';
+		.square(1.5rem);
+		.rounded(@b-radius);
+		flex-shrink: 1;
+		flex-grow: 1;
+	}
+
+	&:before {
+		background: @g-primary;
+		animation: loader 1s infinite;
+		animation-timing-function: cubic-bezier(.5,.07,.61,.99);
+	}
+
+	&:after {
+		margin-left: .25rem;
+		background: @g-accent;
+	}
+
+	&-block {
+		display: flex;
+		.center;
+	}
+
+	&-inverse {
+		&:before {
+			background: @c-background;
+		}
+
+		&:after {
+			background: transparent;
+			border: @b-width solid @c-background;
+		}
+	}
+}
+
+@-webkit-keyframes loader {
+	0% {
+		flex-basis: 10%;
+	}
+
+	50% {
+		flex-basis: 90%;
+	}
+
+	100% {
+		flex-basis: 10%;
+	}
+} 

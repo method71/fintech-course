@@ -1,0 +1,78 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.leslist {
+	.rounded(@b-radius);
+	border: @b-width solid @c-border;
+	overflow: hidden;
+
+	&_section {
+		&:not(&-active) {
+			.leslist_content {
+				max-height: 0;
+			}
+
+			.leslist_header:hover {
+				cursor: pointer;
+				color: @c-accent;
+			}
+		}
+
+		&:last-child {
+			.leslist_header {
+				border-bottom-width: 0;
+			}
+		}
+	}
+
+	&_header {
+		padding: .75rem 1.125rem;
+		background: @c-background-muted;
+		border-top: @b-width solid @c-background;
+		border-bottom: @b-width solid @c-border;
+
+		line-height: 150%;
+		color: @c-primary;
+		.transition-all;
+	}
+
+	&_content {
+		max-height: 600px;
+		overflow: hidden;
+		.transition-all;
+	}
+
+	&_item {
+		display: flex;
+		align-items: center;
+		padding: .75rem;
+		margin-top: -@b-width;
+
+		border-top: @b-width solid @c-border;
+		border-bottom: @b-width solid @c-border;
+
+		line-height: 150%;
+		font-weight: 300;
+
+		.transition-all;
+
+		&-viewed {
+			color: @c-gray;
+
+			.icon {
+				color: @c-muted;
+			}
+		}
+
+		&:hover {
+			background: @c-background-muted;
+		}
+	}
+
+	&_icon {
+		flex-shrink: 0;
+		margin-right: .75rem;
+		color: @c-primary;
+	}
+}

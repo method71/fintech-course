@@ -1,0 +1,15 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.perks {
+	&_title {
+		margin-bottom: 2rem;
+	}
+
+	&_item {
+		& + & {
+			margin-top: 1rem;
+		}
+	}
+}

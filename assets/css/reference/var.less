@@ -1,0 +1,49 @@
+/*
+ * Fonts
+ */
+@fonts: 'Open Sans', sans-serif;
+
+/*
+ * Colors & gradients
+ */
+@c-primary: #1A1F71;
+@c-primary-l: #003EA9;
+@c-accent: #F7B600;
+@c-accent-l: #FFD700;
+
+@c-gray: #5C5C5C;
+@c-muted: #D3D3D3;
+@c-danger: #E30909;
+
+@c-text: #000000;
+@c-text-inverse: #FFFFFF;
+
+@c-border: #EEEEEE;
+@c-background: #FFFFFF;
+@c-background-muted: #F7F7F7;
+
+@g-primary: linear-gradient(77.38deg, #1A1E5A 0.74%, #122D98 100%);
+@g-accent: linear-gradient(77.38deg, #FA9B00 0.74%, #F4CA12 100%);
+
+
+/*
+ * Layout
+ */
+@l-col-w: 72px;
+@l-col-gap: 24px;
+
+@l-width-d: (@l-col-w * 12) + (@l-col-gap * 13);
+@l-width-t: (@l-col-w * 6) + (@l-col-gap * 7);
+@l-width-m: 100%;
+
+@v-d: ~"(min-width: @{l-width-d})";
+@v-t: ~"(max-width: @{l-width-d})";
+@v-m: ~"(max-width: @{l-width-t})";
+
+
+
+/*
+ * Border
+ */
+@b-radius: 4px;
+@b-width: 1px;

@@ -1,0 +1,48 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	height: 3rem;
+	padding: 0 1.5rem;
+	.rounded(@b-radius);
+	background: @c-primary;
+
+	color: #fff;
+	font-size: 1rem;
+	font-weight: normal;
+	font-weight: 600;
+	.transition-all;
+
+	&:not(:disabled):hover {
+		background: @c-primary-l;
+	}
+
+	&-inverse {
+		background: #fff;
+		color: @c-primary;
+
+		&:not(:disabled):hover {
+			background: fade(#fff, 95);
+			color: @c-primary-l;
+		}
+	}
+
+	&-loading {
+		position: relative;
+		cursor: progress;
+		color: transparent;
+
+		.loader {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			.transform(translate(-50%, -50%));
+		}
+	}
+}

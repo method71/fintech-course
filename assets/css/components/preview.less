@@ -1,0 +1,86 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.preview {
+	display: block;
+	flex-shrink: 0;
+	.cols(3);
+	.transition-all;
+
+	@media @v-m {
+		.cols(2.5);
+	}
+
+	&:not(&-locked):hover {
+		color: @c-primary;
+
+		.preview_thumb {
+			img, video, iframe {
+				.transform(scale(1.05));
+			}
+		}
+	}
+
+	&-viewed:hover {
+		.opacity(1);
+	}
+
+	&-viewed {
+		.opacity(.5);
+	}
+
+	&_thumb {
+		.video;
+
+		img, video, iframe {
+			.transition-all;
+		}
+	}
+
+	&_time {
+		position: absolute;
+		bottom: .5rem;
+		right: .75rem;
+
+		display: inline-block;
+		padding: .25rem .5rem;
+		.rounded(@b-radius);
+
+		font-size: .75rem;
+		color: #fff;
+		background: fade(#000, 70);
+	}
+
+	&_title {
+		display: block;
+		margin-top: .75rem;
+		font-size: .875rem;
+		line-height: 150%;
+
+		@media @v-m {
+			font-size: 1rem;
+		}
+	}
+
+	&_overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		.square(100%);
+		background: @g-primary;
+
+		font-size: .75rem;
+		color: @c-text-inverse;
+
+		.icon {
+			.square(2rem);
+			margin-bottom: .25rem;
+		}
+	}
+}

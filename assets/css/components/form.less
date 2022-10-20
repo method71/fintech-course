@@ -1,0 +1,145 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.form {
+	&_field {
+		display: block;
+
+		& + & {
+			margin-top: 1.5rem;
+		}
+
+		&-incorrect {
+			color: @c-danger;
+		}
+
+		&_error {
+			display: block;
+			margin-top: .5rem;
+			font-size: .875rem;
+			line-height: 130%;
+		}
+	}
+
+	&_label {
+		display: block;
+		margin-bottom: .5rem;
+		font-size: .875rem;
+		font-weight: 600;
+	}
+
+	&_checkbox {
+
+	}
+
+	&_button {
+		text-align: center;
+		width: 100%;
+		margin-top: 1.5rem;
+	}
+
+	&_links {
+		margin-top: 1rem;
+		text-align: center;
+		
+		a {
+			.link;
+			font-size: .875rem;
+			color: @c-gray;
+		}
+	}
+
+	&_disclaimer {
+		margin-top: 1rem;
+		font-size: .875rem;
+		font-weight: 300;
+		line-height: 150%;
+
+		a {
+			.link;
+		}
+	}
+
+	&_error {
+		background: @c-danger;
+		.rounded(@b-radius);
+		padding: .75rem 1rem;
+		color: @c-text-inverse;
+		line-height: 150%;
+	}
+}
+
+.input {
+	display: block;
+	width: 100%;
+	height: 3rem;
+	padding: 0 1rem;
+	border: @b-width solid @c-border;
+	.rounded(@b-radius);
+
+	font-family: @fonts;
+	color: @c-text;
+	font-size: 1rem;
+	line-height: 3rem;
+
+	&::placeholder {
+		color: @c-muted;
+	}
+}
+
+.checkbox {
+	display: flex;
+	align-items: center;
+	position: relative;
+
+	&_icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.square(1.5rem);
+		margin-right: .5rem;
+		.rounded(@b-radius);
+		border: @b-width solid @c-muted;
+		.transition-all;
+
+		.icon {
+			color: @c-primary;
+			.square(1.125rem);
+			.opacity(0);
+			.transform(translateY(2px) scale(.9));
+			.transition-all;
+		}
+	}
+
+	&_label {
+		font-size: .875rem;
+		line-height: 130%;
+		color: @c-gray;
+	}
+
+	input {
+		display: block;
+		visibility: hidden;
+		.opacity(0);
+		.square(1px);
+		position: absolute;
+		left: 0;
+		top: 50%;
+		
+		&:checked ~ .checkbox {
+			&_icon {
+				border-color: @c-primary;
+
+				.icon {
+					.opacity(1);
+					.transform(translateY(0) scale(1));
+				}
+			}
+
+			&_label {
+				color: @c-primary;
+			}
+		}
+	}
+}

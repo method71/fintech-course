@@ -1,0 +1,33 @@
+@import (reference) 'reference/lessmix';
+@import (reference) 'reference/var';
+@import (reference) 'reference/classes';
+
+.pictorial {
+	display: flex;
+	align-items: center;
+
+	@media @v-t {
+		flex-direction: column;
+	}
+
+	&_image {
+		.cols(5);
+
+		@media @v-t {
+			width: 100%;
+			margin-bottom: 3rem;
+		}
+
+		img {
+			display: block;
+			pointer-events: none;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&_content {
+		.cols(6);
+		margin-left: auto;
+	}
+}
